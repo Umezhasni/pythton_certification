@@ -1,0 +1,191 @@
+1. What does immutable mean and what three types of Python core data types are considered immutable?
+An immutable data type is a type of object which cannot be modified after its creation. Numbers, strings, and tuples in Python fall into this category. Although you cannot modify an immutable object in place, you can always create a new one by running an expression.
+
+2.What does sequence mean and which three types of data fall into this category?
+A sequence data type is a collection of objects ordered by a specific position. In Python, Strings, lists, and tuples are the data types based on sequences. The Sequences share common sequence operations, such as indexing, concatenation, and slicing, but also have type-specific method calls.
+
+3. What does mapping mean and what kind of data type is based on mapping?
+The term mapping refers to an object that maps keys to associated values. The Python dictionary is the only type of mapping in the base typeset. Mappings do not maintain any left-to-right position order; they support access to stored data by key, as well as type-specific method calls.
+
+4. How would you work with numbers other than those in the decimal number system?
+With Python, it is possible to type numbers in binary, octal, and hexadecimal.
+
+Binary numbers are made of 0 and 1. To type in binary, we use the prefix 0b or 0B. To convert a number into its binary form, we use bin().
+
+bin(0xf)
+
+Octal numbers may have digits from 0 to 7. We use the prefix 0o or 0O.
+
+oct(8)
+
+Hexadecimal numbers may have digits from 0 to 15. We use the prefix 0x or 0X.
+
+hex(16)
+
+5. What are membership operators?
+With the operators ‘in’ and ‘not in’, we can confirm if a value is a member in another.
+
+6. What are assignment operators in Python?
+image.png
+
+We can combine all arithmetic operators with the assignment symbol.
+
+7.What constitutes “True” in Python?
+A true expression is any expression that does not evaluate to 0, the empty list [ ], tuple ( ), dictionary { } or the objects None or False.
+
+8. In comparing dates and DateTime objects, what happens when one comparand is naive and the other aware?
+A TypeError is raised.
+
+9. When are dictionaries considered equal?
+If and only if their sorted lists compare equally.
+
+10. How is object identity tested? Illustrate with an example.
+Using the is and is not operators.
+
+if x is objecttype:
+print “x is the type you thought it was.
+else:
+print “x isn’t an objecttype.”
+
+11. What is the difference between a for loop and a while loop?
+A for loop is typically used when you know exactly how many times the loop needs to be repeated. A while loop is typically used when you don't know how many times the loop needs to be repeated.
+
+12. How does continue, break, and pass work?
+Continue:
+When a specified condition is met, the control is moved to the beginning of the loop, allowing some parts of the loop to be transferred.
+
+Break
+When a condition is met, the loop is terminated and control is passed to the next statement.
+
+Pass
+When you need a piece of code syntactically but don't want to execute it, use this. This is a null operation.
+
+13. Explain *kwargs and args.
+*args
+The function definition uses the args syntax to pass variable-length parameters.
+"" denotes variable length, while "args" is the standard name. Any other will suffice.
+
+**kwargs
+**kwargs is a special syntax for passing variable-length keyworded arguments to functions.
+When a variable is passed to a function, it is called a keyworded argument.
+"Kwargs" is also used by convention here. You are free to use any other name.
+
+14. Write a Python program to find those numbers which are divisible by 7 and multiple of 5, between 1500 and 2700 (both included).
+nl=[]
+for x in range(1500, 2701):
+    if (x%7==0) and (x%5==0):
+        nl.append(str(x))
+print (','.join(nl))
+1505,1540,1575,1610,1645,1680,1715,1750,1785,1820,1855,1890,1925,1960,1995,2030,2065,2100,2135,2170,2205,2240,2275,2310,2345,2380,2415,2450,2485,2520,2555,2590,2625,2660,2695
+15. Write a Python program to guess a number between 1 to 9.
+Note : User is prompted to enter a guess. If the user guesses wrong then the prompt appears again until the guess is correct, on successful guess, user will get a "Well guessed!" message, and the program will exit.
+
+import random
+target_num, guess_num = random.randint(1, 10), 0
+while target_num != guess_num:
+    guess_num = int(input('Guess a number between 1 and 10 until you get it right : '))
+print('Well guessed!')
+Guess a number between 1 and 10 until you get it right : 1
+Guess a number between 1 and 10 until you get it right : 2
+Guess a number between 1 and 10 until you get it right : 3
+Well guessed!
+16. Write a Python program which iterates the integers from 1 to 50. For multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz".
+for fizzbuzz in range(51):
+    if fizzbuzz % 3 == 0 and fizzbuzz % 5 == 0:
+        print("fizzbuzz")
+        continue
+    elif fizzbuzz % 3 == 0:
+        print("fizz")
+        continue
+    elif fizzbuzz % 5 == 0:
+        print("buzz")
+        continue
+    print(fizzbuzz)
+fizzbuzz
+1
+2
+fizz
+4
+buzz
+fizz
+7
+8
+fizz
+buzz
+11
+fizz
+13
+14
+fizzbuzz
+16
+17
+fizz
+19
+buzz
+fizz
+22
+23
+fizz
+buzz
+26
+fizz
+28
+29
+fizzbuzz
+31
+32
+fizz
+34
+buzz
+fizz
+37
+38
+fizz
+buzz
+41
+fizz
+43
+44
+fizzbuzz
+46
+47
+fizz
+49
+buzz
+17. Write a Python program to create the multiplication table (from 1 to 10) of a number.
+n = int(input("Input a number: "))
+
+# use for loop to iterate 10 times
+for i in range(1,11):
+   print(n,'x',i,'=',n*i)
+Input a number: 2
+2 x 1 = 2
+2 x 2 = 4
+2 x 3 = 6
+2 x 4 = 8
+2 x 5 = 10
+2 x 6 = 12
+2 x 7 = 14
+2 x 8 = 16
+2 x 9 = 18
+2 x 10 = 20
+18. What Is the Difference Between Del and Remove() on Lists?
+del removes all elements of a list within a given range
+
+Syntax: del list[start:end]
+
+remove() removes the first occurrence of a particular character
+
+Syntax: list.remove(element)
+
+19. Explain global variables and local variables in Python.
+Local Variables:
+A local variable is any variable declared within a function. This variable exists only in local space, not in global space.
+
+Global Variables:
+Global variables are variables declared outside of a function or in a global space. Any function in the program can access these variables.
+
+20. Why Lambda is used in Python?
+Lambda is typically utilized in instances where an anonymous function is required for a short period of time. Lambda functions can be applied in two different ways:
+
+Assigning Lambda functions to a variable Wrapping Lambda function into another function
